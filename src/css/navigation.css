@@ -1,0 +1,80 @@
+@font-face {
+  font-family: 'Emberly-MediumCondensed';
+  src: url('../assets/Emberly-MediumCondensed.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.navigation {
+  z-index: 9999;
+  position: fixed;
+  bottom: 32vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Times New Roman', serif;
+  transition: opacity 1s ease;
+}
+
+.navigation.visible {
+  opacity: 1;
+}
+
+.navigation.hidden {
+  opacity: 0;
+}
+
+.nav-container {
+  background-color: rgba(128, 128, 128, 0.95);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 600px;
+  width: 90vw;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.bio-section {
+  margin-bottom: 20px;
+}
+
+.bio-text {
+  color: white;
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+  font-weight: 400;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 4px; /* Add padding to prevent clipping on hover */
+}
+
+.nav-link {
+  padding-top: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+.nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px) translateZ(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 6px; /* Explicitly preserve border-radius */
+}
+
+.nav-link:active {
+  transform: translateY(0) translateZ(0);
+  border-radius: 6px; /* Explicitly preserve border-radius */
+} 

@@ -1,0 +1,13 @@
+.bench {
+  position: fixed;
+  bottom: -10vh; /* Position above the platform (platform height is 100px) */
+  right: 33.33%; /* Position in the right third of the page */
+  width: 1000px; /* Adjust width as needed for the bench image */
+  height: 500px; /* Adjust height as needed for the bench image */
+  background-image: url('../assets/bench.png');
+  background-repeat: no-repeat;
+  background-size: contain; /* Maintain aspect ratio */
+  background-position: bottom center;
+  z-index: 1001; /* Higher than platform to appear on top */
+  transform: translateX(50%); /* Center the bench horizontally within its position */
+} 

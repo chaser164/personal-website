@@ -1,0 +1,23 @@
+.platform-frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-width: 750px;
+  height: 100vh;
+  background-image: url('../assets/platform_bottom.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%; /* Stretch to fill the entire viewport both horizontally and vertically */
+  background-position: center center;
+  z-index: 999; /* Lower than other elements so content appears on top */
+  pointer-events: none; /* Allow clicks to pass through to elements behind */
+  box-sizing: border-box;
+}
+
+/* Change to platform4.png for smaller screens */
+@media (max-width: 1000px) {
+  .platform-frame {
+    background-image: url('../assets/platform_bottom_shorter.png');
+    min-width: auto; /* Remove min-width constraint for smaller screens */
+  }
+}

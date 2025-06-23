@@ -1,0 +1,212 @@
+.grid-container {
+    position: relative;
+    margin-top: 10vh; /* Leave 10% of viewport height for background above */
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%; /* You can change this to any percentage */
+    height: 160px;
+    margin: 10vh auto 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.1px solid #383735; /* Add border around the grid */
+  }
+  
+  .grid {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    --tile-size: 12px; /* Increased from 10px to make tiles larger */
+    /* Fill the grid with as many columns as fit */
+    grid-template-columns: repeat(auto-fill, minmax(var(--tile-size), 1fr));
+    /* Fill the grid with as many rows as fit */
+    grid-template-rows: repeat(auto-fill, minmax(var(--tile-size), 1fr));
+    margin: 0;
+    padding: 0;
+    gap: 0;
+  }
+  
+  .square {
+    /* Remove all borders and gaps */
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  
+  .square.mosaic-tile-1 {
+    background-image: url('../assets/mosaic-tile-1.png');
+  }
+  
+  .square.mosaic-tile-2 {
+    background-image: url('../assets/mosaic-tile-2.png');
+  }
+
+  .square.mosaic-tile-3 {
+    background-image: url('../assets/mosaic-tile-3.png');
+  }
+  
+  .square.clicked {
+    background-image: url('../assets/white-tile.png');
+  }
+
+  /* Game controls container */
+  .game-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 0px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column-reverse; 
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    margin-left: 30px;
+    height: 1000px;
+  }
+
+  /* Main button styles */
+  .main-button {
+    padding: 8px 16px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    transform: translateZ(0);
+    width: 160px; /* Fixed width for all buttons */
+  }
+
+  .main-button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px) translateZ(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+  }
+
+  .main-button:active {
+    transform: translateY(0) translateZ(0);
+    border-radius: 6px;
+  }
+
+  /* Control button styles */
+  .control-button {
+    padding: 8px 16px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    transform: translateZ(0);
+    animation: slideInFromRight 1s ease-out forwards;
+    width: 160px; /* Fixed width for all buttons */
+  }
+
+  .control-button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px) translateZ(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+  }
+
+  .control-button:active {
+    transform: translateY(0) translateZ(0);
+    border-radius: 6px;
+  }
+
+  /* Disabled state for control buttons */
+  .control-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .control-button:disabled:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Ensure no residual positioning */
+  .pause-play-button, .reset-button {
+    position: relative; /* Override any fixed/absolute positioning */
+  }
+
+  /* Specific styling for spaceships button */
+  .spaceships-button {
+    position: relative; /* Override any fixed/absolute positioning */
+  }
+
+  /* Slide in animation for control buttons */
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* Slide out animation for control buttons */
+  .control-button.slide-out {
+    animation: slideOutToRight 1s ease-in forwards;
+  }
+
+  @keyframes slideOutToRight {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(200px);
+      opacity: 0;
+    }
+  }
+
+  /* Legacy button styles for backward compatibility */
+  button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    padding: 8px 16px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Times New Roman', serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    transform: translateZ(0);
+  }
+
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px) translateZ(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+  }
+
+  button:active {
+    transform: translateY(0) translateZ(0);
+    border-radius: 6px;
+  }
