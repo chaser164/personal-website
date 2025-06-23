@@ -90,3 +90,47 @@ div, section, main, aside, article {
   position: relative;
   z-index: 1;
 }
+
+.train-time-container {
+  position: fixed;
+  bottom: 20px;
+  right: 120px;
+  z-index: 10000;
+}
+
+.train-time-button {
+  right: 200px;
+  padding: 8px 16px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Times New Roman', serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  transform: translateZ(0);
+  width: 160px; /* Fixed width for all buttons */
+}
+
+.train-animation {
+  position: fixed;
+  top: 0;
+  left: 100vw;
+  height: 100vh;
+  width: auto;
+  z-index: 99999;
+  pointer-events: none;
+  animation: train-move 3.5s linear forwards;
+}
+
+@keyframes train-move {
+  from {
+    left: 100vw;
+  }
+  to {
+    left: -9000px;
+  }
+}

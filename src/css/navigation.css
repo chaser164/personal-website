@@ -24,6 +24,7 @@
 }
 
 .nav-container {
+  margin: 10px;
   background-color: rgba(128, 128, 128, 0.95);
   border-radius: 12px;
   padding: 20px;
@@ -51,6 +52,22 @@
   gap: 16px;
   flex-wrap: wrap;
   padding: 4px; /* Add padding to prevent clipping on hover */
+}
+
+@media (max-width: 500px) {
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+  .nav-link {
+    flex: 1 1 30%;
+    max-width: 95px;
+    text-align: center;
+  }
+  .nav-links a:nth-child(4) {
+    flex-basis: 100%;
+    width: 100%
+  }
 }
 
 .nav-link {

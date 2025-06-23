@@ -55,7 +55,7 @@ export const Board = ({
     const newTileTypes = {};
     let text = "CHASE REYNDERS";
     console.log(gridDim.width);
-    if (gridDim.width < 78) { 
+    if (gridDim.width < 76) { 
         text = "CHASE R";
     }
     if (gridDim.width < 45) {
@@ -220,19 +220,21 @@ export const Board = ({
         }
       }
     }
-    // Place LWSS in the middle
-    const lwssX = Math.floor(width / 2) - 2;
-    const lwssY = Math.floor(height / 2) - 2;
-    for (let j = 0; j < lwss.length; j++) {
-      for (let i = 0; i < lwss[j].length; i++) {
-        if (lwss[j][i] === 1) {
-          const x = lwssX + i;
-          const y = lwssY + j;
-          if (x >= 0 && x < width && y >= 0 && y < height) {
-            newClickedSquares.add(`${x}-${y}`);
-          }
+    if (gridDim.width > 35) {
+        // Place LWSS in the middle
+        const lwssX = Math.floor(width / 2) - 2;
+        const lwssY = Math.floor(height / 2) - 2;
+        for (let j = 0; j < lwss.length; j++) {
+        for (let i = 0; i < lwss[j].length; i++) {
+            if (lwss[j][i] === 1) {
+            const x = lwssX + i;
+            const y = lwssY + j;
+            if (x >= 0 && x < width && y >= 0 && y < height) {
+                newClickedSquares.add(`${x}-${y}`);
+            }
+            }
         }
-      }
+        }
     }
     setClickedSquares(newClickedSquares);
     setIsPlaying(false);

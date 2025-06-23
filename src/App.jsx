@@ -4,12 +4,14 @@ import './css/app.css'
 import { Board } from './Board'
 import { Platform } from './Platform'
 import { Navigation } from './Navigation'
+import subwayImg from './assets/subway.png';
 
 function App() {
   const [isNavigationVisible, setIsNavigationVisible] = useState(true);
   const [isGameMode, setIsGameMode] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
+  const [showTrain, setShowTrain] = useState(false);
   const resetBoardRef = useRef(null);
   const spaceshipsRef = useRef(null);
 
@@ -38,6 +40,11 @@ function App() {
     if (spaceshipsRef.current) {
       spaceshipsRef.current();
     }
+  };
+
+  const handleTrainTime = () => {
+    setShowTrain(false); // reset if already running
+    setTimeout(() => setShowTrain(true), 10); // trigger reflow for animation
   };
 
   return (
@@ -108,9 +115,29 @@ function App() {
             >
               {isPlaying ? "Pause" : "Play"}
             </button>
+            <button 
+              className={`control-button about-button ${isExiting ? 'slide-out' : ''}`}
+              onClick={() => window.open('https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life', '_blank', 'noopener noreferrer')}
+              disabled={isExiting}
+            >
+              About
+            </button>
           </>
         )}
       </div>
+      <div className="train-time-container">
+        <button className="train-time-button" onClick={handleTrainTime}>
+          Train Time
+        </button>
+      </div>
+      {showTrain && (
+        <img
+          src={subwayImg}
+          alt="Train"
+          className="train-animation"
+          onAnimationEnd={() => setShowTrain(false)}
+        />
+      )}
     </div>
   )
 }

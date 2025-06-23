@@ -10,10 +10,11 @@ export function Navigation({ isVisible = true }) {
           </p>
         </div>
         <div className="nav-links">
-          <a href="#projects" className="nav-link">Projects</a>
+          <a href="#portfolio" className="nav-link">Portfolio</a>
           <a href="https://github.com/chaser164" className="nav-link">GitHub</a>
-          <a href="#linkedin" className="nav-link">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/chase-reynders" className="nav-link">LinkedIn</a>
           <a href="/resume.pdf" className="nav-link" target="_blank" rel="noopener noreferrer">Résumé</a>
+          <a href="mailto:chase.reynders@yale.edu" className="nav-link">Mail</a>
         </div>
       </div>
     </nav>
