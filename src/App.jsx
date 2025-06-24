@@ -5,6 +5,8 @@ import { Board } from './Board'
 import { Platform } from './Platform'
 import { Navigation } from './Navigation'
 import subwayImg from './assets/subway.png';
+import leftColumnImg from './assets/platform_left_column.png';
+import rightColumnImg from './assets/platform_right_column.png';
 
 function App() {
   const [isNavigationVisible, setIsNavigationVisible] = useState(true);
@@ -50,7 +52,7 @@ function App() {
   return (
     <div className="app-container">
       <div className="left-wall">
-        <img src="/src/assets/left_column.png" alt="Left Wall" />
+        <img src={leftColumnImg} alt="Left Wall" />
       </div>
       <div className="main-content">
         <Board 
@@ -65,7 +67,7 @@ function App() {
         <Platform />
       </div>
       <div className="right-wall">
-        <img src="/src/assets/right_column.png" alt="Right Wall" />
+        <img src={rightColumnImg} alt="Right Wall" />
       </div>
       <Navigation isVisible={isNavigationVisible} />
       
