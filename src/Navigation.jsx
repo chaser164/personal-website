@@ -6,7 +6,7 @@ export function Navigation({ isVisible = true }) {
       <div className="nav-container">
         <div className="bio-section">
           <p className="bio-text">
-            Hi, I'm Chase! I am a senior at Yale University studying Computer Science & Psychology with a certificate in Data Science. My interests include in project-based learning, human-oriented technology, and interdisciplinary approaches to problem solving.
+            Hi, I'm Chase! I am a senior at Yale University studying Computer Science & Psychology with a certificate in Data Science. My interests include project-based learning, human-oriented technology, and interdisciplinary approaches to problem solving.
           </p>
         </div>
         <div className="nav-links">
