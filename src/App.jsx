@@ -140,6 +140,14 @@ function App() {
           onAnimationEnd={() => setShowTrain(false)}
         />
       )}
+      
+      {/* Pre-load subway image */}
+      <img
+        src={subwayImg}
+        alt=""
+        style={{ display: 'none' }}
+        onLoad={() => console.log('Subway image pre-loaded')}
+      />
     </div>
   )
 }
